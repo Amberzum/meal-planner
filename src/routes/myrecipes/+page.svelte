@@ -1,5 +1,6 @@
 <script>
 	import { recipes } from '@lib/store.js';
+	import RecipeCard from '@components/RecipeCard.svelte';
 
 	let newRecipeName = '';
 	function addRecipe() {
@@ -22,7 +23,7 @@
 <main>
 	<ul>
 		{#each recipeList as recipe}
-			<li>{recipe}</li>
+			<RecipeCard recipeName={recipe} />
 		{/each}
 	</ul>
 </main>
@@ -55,12 +56,5 @@
 		gap: 5px;
 		padding: 0px;
 		margin-top: 5px;
-	}
-
-	li {
-		list-style: none;
-		padding: 3px;
-		background: antiquewhite;
-		border-radius: 3px;
 	}
 </style>
