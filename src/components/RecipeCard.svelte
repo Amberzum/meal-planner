@@ -24,11 +24,17 @@
 		justify-content: space-between;
 		list-style: none;
 		padding: 3px;
-		background: antiquewhite;
+		background-color: var(--color-secondary);
 		border-radius: 3px;
 	}
 
 	button {
-		color: red;
+		background-color: transparent;
+		color: var(--color-primary);
+	}
+
+	button:hover {
+		color: #588980;
+		cursor: pointer;
 	}
 </style>

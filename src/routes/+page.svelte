@@ -1,25 +1,15 @@
 <script>
 	import { recipes } from '@lib/store.js';
 	import ChosenRecipeCard from '@components/ChosenRecipeCard.svelte';
-
-	let recipeList;
-
-	const unsubscribe = recipes.subscribe((list) => {
-		recipeList = list;
-	});
+	import { shuffle } from '@lib/utils.js';
+	import { get } from 'svelte/store';
 
 	let chosenRecipes = [];
 	function chooseRecipes() {
-		chosenRecipes = [];
-		for (let i = 0; i < 5; i++) {
-			let rand = Math.floor(Math.random() * recipeList.length);
-			chosenRecipes.push(recipeList[rand]);
-			chosenRecipes = chosenRecipes;
-		}
+		chosenRecipes = shuffle(get(recipes));
 	}
 </script>
 
-<a href="/myrecipes">My Recipes</a>
 <h1>What's For Dinner?</h1>
 <button on:click={chooseRecipes}>Give me my recipes, pls.</button>
 <h2>This weeks meals are:</h2>

@@ -11,7 +11,7 @@
 		justify-content: space-between;
 		list-style: none;
 		padding: 3px;
-		background: antiquewhite;
+		background-color: var(--color-secondary);
 		border-radius: 3px;
 	}
 </style>

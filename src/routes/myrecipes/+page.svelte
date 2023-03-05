@@ -5,6 +5,7 @@
 	let newRecipeName = '';
 	function addRecipe() {
 		recipes.update((list) => [...list, newRecipeName]);
+		newRecipeName = '';
 	}
 
 	let recipeList;
@@ -14,13 +15,15 @@
 	});
 </script>
 
-<a href="/">Home</a>
 <h1>My Recipes</h1>
-<form>
-	<label>Recipe Name<input bind:value={newRecipeName} type="text" placeholder="eg. tacos" /></label>
-	<button on:click={addRecipe}>Add {newRecipeName}</button>
-</form>
+
 <main>
+	<form>
+		<label
+			>Recipe Name<input bind:value={newRecipeName} type="text" placeholder="eg. tacos" /></label
+		>
+		<button on:click={addRecipe}>Add {newRecipeName}</button>
+	</form>
 	<ul>
 		{#each recipeList as recipe}
 			<RecipeCard recipeName={recipe} />
@@ -29,31 +32,25 @@
 </main>
 
 <style>
+	main {
+		max-width: 320px;
+		margin: 0 auto;
+	}
+
 	form {
 		display: flex;
 		flex-direction: column;
+		align-items: stretch;
 		gap: 5px;
-		max-width: 200px;
-		margin: 0 auto;
-		background: antiquewhite;
 		padding: 10px;
 		border-radius: 8px;
-	}
-	input {
-		display: block;
-		padding: 2px;
-		margin-top: 5px;
-	}
-	button {
-		max-width: 200px;
 	}
 
 	ul {
 		display: flex;
 		flex-direction: column;
 		margin: 0 auto;
-		width: 200px;
-		gap: 5px;
+		gap: 8px;
 		padding: 0px;
 		margin-top: 5px;
 	}

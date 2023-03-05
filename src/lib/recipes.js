@@ -5,7 +5,5 @@ export const defaultRecipes = [
 	'Roast Dinner',
 	'Cheese Toasties',
 	'Tacos',
-	'Fajitas',
-	'Soup',
-	'Melons'
+	'Fajitas'
 ];
